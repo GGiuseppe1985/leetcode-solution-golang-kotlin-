@@ -1,0 +1,7 @@
+func buildArray(nums []int) []int {
+  sol := make([]int, len(nums))
+    for idx := range nums {
+        sol[idx] = nums[nums[idx]]
+    }
+    return sol
+}
