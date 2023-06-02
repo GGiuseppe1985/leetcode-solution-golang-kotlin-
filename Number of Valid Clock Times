@@ -1,0 +1,41 @@
+func countTime(time string) int {
+    return numHourChoices(time[:2]) * numMinuteChoices(time[3:])
+}
+
+func numHourChoices(h string) int {
+    if h == "??" {
+        return 24
+    }
+    
+    if h[0] == '?' {
+        if h[1] < '4' {
+            return 3
+        }
+        return 2
+    }
+    
+    if h[1] == '?' {
+        if h[0] == '2' {
+            return 4
+        }
+        return 10
+    }
+    
+    return 1
+}
+
+func numMinuteChoices(m string) int {
+    if m == "??" {
+        return 60
+    }
+    
+    if m[0] == '?' {
+        return 6
+    }
+    
+    if m[1] == '?' {
+        return 10
+    }
+    
+    return 1
+}
