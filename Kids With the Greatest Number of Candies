@@ -1,0 +1,17 @@
+func kidsWithCandies(candies []int, extraCandies int) []bool {
+    var max int
+    for _, c := range  candies {
+        if c > max{
+            max = c
+        }
+    }
+    res := make([]bool, 0, len(candies))
+    for _, c := range candies {
+        var isM bool
+        if c + extraCandies >= max{
+    isM =true
+}  
+res = append(res, isM)
+  }
+  return res
+}
