@@ -1,0 +1,10 @@
+func mostWordsFound(sentences []string) int {
+    var max int
+    for _, sent  := range sentences {
+        words := strings.Split(sent, " ")
+        if( len(words) > max){
+            max = len(words)
+        }
+    }
+    return max
+}
