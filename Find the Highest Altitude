@@ -1,0 +1,18 @@
+func largestAltitude(gain []int) int {
+    currMax := 0
+    curr := 0
+    for _, v := range gain {
+        curr += v
+        currMax = max(currMax, curr)
+    }
+    return currMax
+}
+
+
+func max(prev, next int) int {
+    if prev > next {
+        return prev
+    } else {
+        return next
+    }
+}
