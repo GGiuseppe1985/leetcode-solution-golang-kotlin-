@@ -1,0 +1,11 @@
+func countKDifference(nums []int, k int) int {
+    var result int = 0
+    for i := range nums {
+        for j := range nums {
+            if nums[i] - nums[j] == k {
+                result +=1
+            }
+        }
+    }
+    return result
+}
