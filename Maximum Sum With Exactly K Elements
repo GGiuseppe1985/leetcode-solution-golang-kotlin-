@@ -1,0 +1,14 @@
+func maximizeSum(nums []int, k int) int {
+    var max int
+    for _, num := range nums {
+        if num > max {
+            max = num
+        }
+    }
+    res := max
+    for i := 1; i < k; i++ {
+        max++
+        res += max
+    }
+    return res
+}
