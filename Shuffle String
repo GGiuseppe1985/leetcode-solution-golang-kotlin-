@@ -1,0 +1,7 @@
+func restoreString(s string, indices []int) string {
+    news := make([]string, len(indices))
+    for idx, indice := range indices {
+        news[indice] = string(s[idx])
+    }
+    return strings.Join(news, "")
+}
