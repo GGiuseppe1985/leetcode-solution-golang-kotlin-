@@ -1,0 +1,13 @@
+func countConsistentStrings(allowed string, words []string) int {
+    count := 0
+    for _, word := range words {
+        for _, ch := range word {
+            if !strings.ContainsRune(allowed, ch){
+                count--
+                break
+            }
+        }
+        count++
+    }
+    return count
+}
