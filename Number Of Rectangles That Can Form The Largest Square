@@ -1,0 +1,20 @@
+func countGoodRectangles(rectangles [][]int) int {
+    var max, cnt int
+    for _, rect := range rectangles {
+        edge := min(rect[0], rect[1])
+        if max < edge {
+            max = edge
+            cnt = 1
+        } else if max == edge {
+            cnt++
+        }
+    }
+    return cnt
+}
+
+func min(a, b int)int {
+    if a > b {
+        return b
+    }
+    return a
+}
