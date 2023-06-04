@@ -12,3 +12,18 @@ func diStringMatch(s string) []int {
         }
     }   
 }
+solution 2 golang
+func diStringMatch(s string) []int {
+    res := make([]int, 0 , len(s)+1)
+    max, min := len(s), 0
+    for _,v := range s {
+        if v == 'I' {
+            res = append(res, min)
+            min++
+        } else {
+            res = append(res, max)
+            max--
+        }
+    }
+    return append(res, max)
+}
