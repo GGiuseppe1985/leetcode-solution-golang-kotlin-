@@ -1,0 +1,7 @@
+func createTargetArray(nums []int, index []int) []int {
+   var result []int
+   for i, v :=range index {
+       result = append(result[:v], append([]int{nums[i]}, result[index[i]:]...)...)
+   }
+   return result
+}
