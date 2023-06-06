@@ -1,0 +1,13 @@
+func duplicateZeros(arr []int)  {
+   for i := len(arr)-1; i >= 0; i--{
+       if arr[i] == 0{
+           shiftR(i, arr)
+       }
+   } 
+}
+func shiftR(idx int, arr[] int){
+    for i := len(arr) - 2; i >= idx; i--{
+        arr[i+1] = arr[i]
+    }
+    
+}
