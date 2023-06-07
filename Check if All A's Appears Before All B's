@@ -1,0 +1,4 @@
+func checkString(s string) bool {
+    val := "ba"
+    return strings.Count(s, val) == 0
+}
