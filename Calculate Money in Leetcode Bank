@@ -1,0 +1,9 @@
+func totalMoney(n int) int {
+    sum := 0
+    for i := 0; i < n; i++{
+        rem := i /7
+        val := i % 7
+        sum += rem + val +1
+    }
+    return sum
+}
