@@ -1,0 +1,12 @@
+func countAsterisks(s string) int {
+    var res, bars int
+    for _, val := range s{
+        if val == '*' && bars % 2 == 0{
+            res++
+        } 
+        if val == '|'{
+            bars++
+        }
+    }
+    return res
+}
