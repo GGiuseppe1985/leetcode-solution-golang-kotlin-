@@ -1,0 +1,16 @@
+func countTriples(n int) int {
+    count := 0
+    for a := 1; a <= n; a++{
+        total := a *a
+        for b := 1; b <= n; b++{
+            total += b * b
+            for c:= 1; c <= n; c++{
+                if total == c*c{
+                    count++
+                }
+            }
+            total = a * a
+        }
+    }
+    return count
+}
