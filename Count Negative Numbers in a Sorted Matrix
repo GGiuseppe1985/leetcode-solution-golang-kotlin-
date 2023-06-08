@@ -1,0 +1,11 @@
+func countNegatives(grid [][]int) int {
+    count := 0
+    for _, v :=range grid {
+        for _, s := range v{
+            if s< 0{
+                count++
+            }
+        }
+    }
+    return count
+}
