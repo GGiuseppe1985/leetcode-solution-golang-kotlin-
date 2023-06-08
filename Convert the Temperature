@@ -1,0 +1,13 @@
+func convertTemperature(celsius float64) []float64 {
+    ans := []float64{}
+    ans = append(ans, celsius + 273.15, celsius * 1.80 + 32.00)
+    return ans
+}
+2 solution golang
+class Solution {
+    public double[] convertTemperature(double celsius) {
+        double f = celsius *  1.80 + 32.00;
+        double k = celsius +273.15;
+        return new double[] {k, f};
+    }
+}
