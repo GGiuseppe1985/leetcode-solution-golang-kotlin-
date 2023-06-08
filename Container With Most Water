@@ -1,0 +1,17 @@
+func maxArea(height []int) int {
+    result := 0
+    for i, j := 0, len(height) - 1; i < j; {
+        area := j - i
+        if height[i] < height[j] {
+            area *= height[i]
+            i++
+        } else {
+            area *= height[j]
+            j--
+        }
+        if area > result {
+            result = area
+        }
+    }
+    return result
+}
