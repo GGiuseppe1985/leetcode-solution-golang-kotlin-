@@ -1,0 +1,39 @@
+type MyHashSet struct {
+    m map[int]bool
+}
+
+
+func Constructor() MyHashSet {
+    return MyHashSet{
+        make(map[int]bool),
+    }
+}
+
+
+func (this *MyHashSet) Add(key int)  {
+    if _, ok :=  this.m[key]; !ok {
+        this.m[key] = true
+    }
+}
+
+
+func (this *MyHashSet) Remove(key int)  {
+    if _, ok := this.m[key]; ok {
+        delete(this.m, key)
+    }
+}
+
+
+func (this *MyHashSet) Contains(key int) bool {
+    _, ok := this.m[key]
+    return ok
+}
+
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Add(key);
+ * obj.Remove(key);
+ * param_3 := obj.Contains(key);
+ */
