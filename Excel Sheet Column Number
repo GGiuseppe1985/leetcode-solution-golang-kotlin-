@@ -1,0 +1,7 @@
+func titleToNumber(columnTitle string) int {
+    count := 0
+    for _,v  := range columnTitle{
+        count = count * 26 + (int(v)- 64)
+    }
+    return count
+}
