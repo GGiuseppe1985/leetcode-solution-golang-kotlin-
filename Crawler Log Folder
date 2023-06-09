@@ -1,0 +1,19 @@
+func minOperations(logs []string) int {
+    res := 0
+    
+    for _, log := range logs {
+        if log == "./" {
+            continue
+        } else if log == "../" {
+            res--
+            
+            if res < 0 {
+                res = 0
+            }
+        } else {
+            res++
+        }
+    }
+    
+    return res
+}
