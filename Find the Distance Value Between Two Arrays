@@ -1,0 +1,18 @@
+func findTheDistanceValue(arr1 []int, arr2 []int, d int) int {
+    res := len(arr1)
+    for i := 0; i < len(arr1); i++{
+        for j := 0; j < len(arr2); j++{
+            if abs(arr2[j]-arr1[i]) <= d {
+                res--
+                break
+            }
+        }
+    }
+    return res
+}
+func abs (n int) int {
+    if n < 0{
+        n = -n
+    }
+    return n
+}
