@@ -1,0 +1,10 @@
+func isAnagram(s string, t string) bool {
+   words1 := strings.Split(s, "")
+	words2 := strings.Split(t, "")
+
+	sort.Strings(words1)
+	sort.Strings(words2)
+
+	return reflect.DeepEqual(words1, words2)
+
+}
