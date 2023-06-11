@@ -1,0 +1,7 @@
+func xorOperation(n int, start int) int {
+    var count int
+    for i := 0; i <n; i++{
+        count ^= start + 2 * i
+    }
+    return count
+}
