@@ -1,0 +1,13 @@
+func distributeCandies(candyType []int) int {
+   var set = make(map[int]bool)
+   for _, n := range  candyType{
+       set[n] = true
+   }
+   return min(len(set), len(candyType)/2)
+}
+func min(a, b int) int {
+    if a < b {
+        return a
+    }
+    return b
+}
