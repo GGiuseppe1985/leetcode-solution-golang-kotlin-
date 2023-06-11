@@ -1,0 +1,4 @@
+func squareIsWhite(coordinates string) bool {
+    chara, num := coordinates[0], coordinates[1]
+    return !((chara + num) % 2 == 0)
+}
