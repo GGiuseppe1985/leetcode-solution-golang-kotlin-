@@ -1,0 +1,21 @@
+func findDuplicate(nums []int) int {
+  left, right := 1, len(nums) - 1
+  for left < right {
+      mid := left +(right - left)/2
+      if lessOrEqual(nums, mid) > mid {
+          right = mid
+      } else {
+          left = mid + 1
+      }
+  } 
+  return  left 
+}
+func lessOrEqual(nums[] int, n int) int{
+    count := 0
+    for i := range nums {
+        if nums[i] <= n {
+            count++
+        }
+    }
+    return count
+}
