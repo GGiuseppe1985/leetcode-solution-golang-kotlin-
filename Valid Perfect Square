@@ -1,0 +1,4 @@
+func isPerfectSquare(num int) bool {
+    n := math.Sqrt(float64(num))
+    return int(n)* int(n) == num
+}
