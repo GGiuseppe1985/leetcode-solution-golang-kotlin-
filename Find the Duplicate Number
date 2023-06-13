@@ -19,3 +19,15 @@ func lessOrEqual(nums[] int, n int) int{
     }
     return count
 }
+
+2 SOLUTION GOLANG
+
+func findDuplicate(nums []int) int {
+   for nums[0] != nums[nums[0]]{
+     temp := nums[nums[0]]
+   nums[nums[0]] = nums[0]
+   nums[0] = temp
+   }
+   return nums[0]
+   
+}
