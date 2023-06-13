@@ -1,0 +1,13 @@
+func minPairSum(nums []int) int {
+    maxSum := math.MinInt
+		left, right := 0, len(nums)-1
+		sort.Ints(nums)
+		for left < right{
+			if nums[right] + nums[left] > maxSum{
+				maxSum = nums[right] +nums[left]
+			}
+			left++
+			right--
+		}
+		return maxSum
+}
