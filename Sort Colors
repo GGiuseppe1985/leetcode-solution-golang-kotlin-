@@ -1,0 +1,21 @@
+func sortColors(nums []int)  {
+   for i := 0; i < len(nums); i++{
+       for j := len(nums) - 1; j > i; j--{
+           if nums[j] < nums[j -1]{
+               temp := nums[j]
+               nums[j] = nums[j - 1]
+               nums[j -1] = temp
+           }
+       }
+   } 
+}
+solution 2 golang
+func sortColors(nums []int)  {
+    for i := 0; i < len(nums); i++{
+        for j := len(nums) - 1; j > i; j--{
+            if nums[j] < nums[j -1]{
+                nums[j], nums[j - 1] = nums[j -1], nums[j]
+            }
+        }
+    }
+}
