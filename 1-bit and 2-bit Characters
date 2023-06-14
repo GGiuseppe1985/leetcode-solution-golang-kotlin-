@@ -1,0 +1,6 @@
+func isOneBitCharacter(bits []int) bool {
+    for len(bits) >= 2 {
+    bits = bits[1+bits[0]:]
+  }  
+  return len(bits) > 0
+}
