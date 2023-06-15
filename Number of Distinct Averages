@@ -1,0 +1,8 @@
+func distinctAverages(nums []int) int {
+    sort.Ints(nums)
+    mySet := make(map[float64]bool)
+    for i := 0; i < len(nums)/2; i++{
+        mySet[float64(nums[i]+ nums[len(nums) - i -1]) /2] = true
+    }
+    return len(mySet)
+}
