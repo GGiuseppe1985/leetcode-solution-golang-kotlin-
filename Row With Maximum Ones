@@ -1,0 +1,17 @@
+func rowAndMaximumOnes(mat [][]int) []int {
+    var max, ind int
+    for i := 0; i < len(mat); i++{
+        count := 0
+        for j := 0; j < len(mat[i]); j++{
+            if mat[i][j] == 1{
+                count++
+            }
+        }
+        if count > max{
+            max = count
+            ind = i
+        }
+    }
+    return []int {ind, max}
+
+}
