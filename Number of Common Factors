@@ -1,0 +1,14 @@
+func commonFactors(a int, b int) int {
+    min := a
+    if min > b{
+        min = b
+    }
+    count := 1
+    for i := 2; i <= min; i++{
+        if a % i == 0 && b % i == 0{
+            count++
+        }
+    }
+    return count  
+
+}
