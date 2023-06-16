@@ -1,0 +1,24 @@
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func isPalindrome(head *ListNode) bool {
+    stack := []int{}
+    cur := head
+    for cur != nil{
+        stack = append(stack, cur.Val)
+        cur = cur.Next
+    }
+    left, right := 0, len(stack)-1
+    for left < right {
+        if stack[left] != stack[right]{
+            return false
+        }
+        left++
+        right--
+    }
+    return true
+}
