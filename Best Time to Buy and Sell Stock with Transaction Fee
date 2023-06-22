@@ -1,0 +1,17 @@
+func maxProfit(prices []int, fee int) int {
+    ready, hold := 0, math.MinInt32
+    
+    for _, v := range prices {
+        ready, hold = max(ready, hold+v), max(hold, ready-v-fee)
+    } 
+    
+    return ready
+}
+
+func max(i, j int) int {
+    if i > j {
+        return i
+    }
+    
+    return j
+}
