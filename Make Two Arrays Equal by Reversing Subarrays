@@ -1,0 +1,10 @@
+func canBeEqual(target []int, arr []int) bool {
+    sort.Ints(arr)
+    sort.Ints(target)
+    for i := range arr{
+        if arr[i] != target[i]{
+            return false
+        }
+    }
+    return true
+}
