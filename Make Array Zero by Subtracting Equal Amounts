@@ -1,0 +1,9 @@
+func minimumOperations(nums []int) int {
+    tem := make(map[int]int)
+    for _, num := range nums{
+        if num != 0{
+            tem[num]++
+        }
+    }
+    return len(tem)
+}
