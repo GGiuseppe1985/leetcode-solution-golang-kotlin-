@@ -1,0 +1,13 @@
+func isMonotonic(nums []int) bool {
+    increase := true
+	decrease := true
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i+1]-nums[i] > 0 {
+			increase = false
+		} else if nums[i+1]-nums[i] < 0 {
+			decrease = false
+		}
+	}
+
+	return increase || decrease
+}
