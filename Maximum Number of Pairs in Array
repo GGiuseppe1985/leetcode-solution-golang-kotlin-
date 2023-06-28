@@ -1,0 +1,20 @@
+ func numberOfPairs(nums []int) []int {
+ leftOverElementCount := 0
+    pairCount := 0
+
+    arr := make([]bool, 101) // all false array
+    
+    for _, v := range nums {
+        if arr[v] == false {
+            arr[v] = true
+            leftOverElementCount++
+        } else {
+            arr[v] = false
+            pairCount++
+            leftOverElementCount--
+        }
+    }
+
+    answerArray := []int{pairCount, leftOverElementCount}
+    return answerArray
+}
