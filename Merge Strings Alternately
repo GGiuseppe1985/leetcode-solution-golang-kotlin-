@@ -1,0 +1,16 @@
+func mergeAlternately(word1 string, word2 string) string {
+    left, right := 0, 0
+    res := ""
+    for len(res)<len(word1 + word2){
+        if left < len(word1){
+            res += string(word1[left])
+            left++
+        }
+        if right <len(word2){
+            res += string(word2[right])
+            right++
+        }
+
+    }
+    return res
+}
