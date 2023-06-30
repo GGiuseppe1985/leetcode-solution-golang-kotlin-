@@ -1,0 +1,23 @@
+func maxVowels(s string, k int) int {
+    counter := 0
+    answer := 0
+    for i := 0; i < len(s);i++{
+        if isVowel(s[i]){
+            counter++
+        }
+        if i >= k && isVowel(s[i - k]) {
+            counter--
+        }
+        answer= max(answer, counter)
+    }
+    return answer
+}
+func isVowel(char byte) bool {
+    return char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'
+}
+func max(a, b int) int {
+    if a > b{
+        return a
+    }
+    return b
+}
