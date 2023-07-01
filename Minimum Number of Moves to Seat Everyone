@@ -1,0 +1,17 @@
+func minMovesToSeat(seats []int, students []int) int {
+    sort.Ints(seats)
+    sort.Ints(students)
+    var ans int = 0
+    
+    for i := range seats{
+        ans += Absolute(seats[i] - students[i])
+    }
+    return ans
+}
+
+func Absolute(val int) int{
+    if val < 0 {
+        return -val
+    }
+    return val
+}
