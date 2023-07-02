@@ -1,0 +1,18 @@
+func pivotArray(nums []int, pivot int) []int {
+   var before []int 
+   var after  []int
+   var equal []int
+   for _, n := range nums {
+       if n < pivot{
+           before = append(before, n)
+       } else if n> pivot{
+           after = append(after, n)
+       } else {
+           equal = append(equal, n)
+       }
+   }
+   before = append(before, equal...)
+before = append(before, after...)
+
+return before
+}
