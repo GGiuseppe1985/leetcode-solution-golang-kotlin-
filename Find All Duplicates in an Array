@@ -1,0 +1,14 @@
+func findDuplicates(nums []int) []int {
+    m:= make(map[int]int)
+    ans := []int{}
+    for _, n := range nums{
+        m[n]++
+    }
+    for k, v :=range m{
+        if v >= 2{
+            ans = append(ans, k)
+        }
+    }
+    sort.Ints(ans)
+    return ans
+}
