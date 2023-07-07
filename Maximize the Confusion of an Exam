@@ -1,0 +1,38 @@
+func maxConsecutiveAnswers(answerKey string, k int) int {
+    var t, f  int
+    var res int
+    left := 0
+    for right := 0; right < len(answerKey); right++{
+        if answerKey[right] == 'T'{
+            t++
+        } else {
+            f++;
+        }
+        if min(t, f) <= k{
+            res = max(res, right -left+1)
+        }
+        for min(t, f) > k{
+           if answerKey[left] == 'T'{
+               t--;
+           } else {
+               f--
+           }
+           left++
+        }
+    }
+    return res;
+
+
+}
+func min(a, b int) int {
+    if a < b {
+        return a
+    }
+    return b
+}
+func max(a, b int) int {
+  if a > b {
+    return a
+  }
+  return b
+}
