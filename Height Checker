@@ -1,0 +1,12 @@
+func heightChecker(heights []int) int {
+    a := make([]int, len(heights))
+    count := 0
+    copy(a, heights)
+    sort.Ints(a)
+    for i := 0; i < len(heights); i++{
+        if heights[i] != a[i]{
+            count++
+        }
+    }
+    return count
+}
