@@ -1,0 +1,14 @@
+func intersect(nums1 []int, nums2 []int) []int {
+    freq := [1001]int{}
+    for _, num := range nums1{
+        freq[num]++
+    }
+    var res []int
+    for _, num := range nums2 {
+        if freq[num] > 0{
+            res = append(res, num)
+            freq[num]--
+        }
+    }
+    return res
+}
