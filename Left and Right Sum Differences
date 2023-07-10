@@ -1,0 +1,17 @@
+func leftRightDifference(nums []int) (res[]int) {
+    sum, leftSum := 0, 0
+    for _, v := range nums{
+        sum += v
+    }
+    for _, v := range nums{
+        leftSum += v
+        res = append(res, abs(leftSum-sum))
+        sum -= v
+    }
+    return
+
+}
+func abs(a int) int { 
+ if a < 0 {return -a}
+    return a
+}
