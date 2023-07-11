@@ -1,0 +1,15 @@
+func longestCommonPrefix(strs []string) string {
+	var res string
+	if len(strs) == 0 {
+		return ""
+	}
+	res = strs[0]
+	for i := 0; i < len(strs); {
+		if strings.HasPrefix(strs[i], res) {
+			i++
+		} else {
+			res = res[:len(res)-1]
+		}
+	}
+	return res
+}
