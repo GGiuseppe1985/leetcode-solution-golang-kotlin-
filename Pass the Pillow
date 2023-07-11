@@ -1,0 +1,7 @@
+func passThePillow(n int, time int) int {
+    turn := time/(n-1)
+    if turn %2 == 0 {
+        return 1 + time % (n - 1)
+    }
+    return n -time % (n - 1)
+}
