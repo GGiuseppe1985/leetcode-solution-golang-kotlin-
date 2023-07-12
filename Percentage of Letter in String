@@ -1,0 +1,9 @@
+func percentageLetter(s string, letter byte) int {
+    count := 0
+    for _, i := range s{
+        if byte(i) == letter{
+            count += 1
+        }
+    }
+    return count * 100/len(s)
+}
