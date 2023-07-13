@@ -1,0 +1,23 @@
+func reverseOnlyLetters(s string) string {
+    sArr := []rune(s)
+	left := 0
+	right := len(sArr) - 1
+
+	for left < right {
+		if !unicode.IsLetter(sArr[left]) {
+			left++
+			continue
+		}
+		if !unicode.IsLetter(sArr[right]) {
+			right--
+			continue
+		}
+
+		temp := sArr[left]
+		sArr[left] = sArr[right]
+		sArr[right] = temp
+		left++
+		right--
+	}
+	return string(sArr)
+}
