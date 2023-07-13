@@ -1,0 +1,16 @@
+func judgeCircle(moves string) bool {
+    var left, upDown int
+    for _, val := range moves {
+        switch val {
+            case 'U':
+            upDown++
+            case 'D':
+            upDown--
+            case 'L':
+            left--
+            case 'R':
+            left++
+        }
+    }
+    return left == 0 && upDown == 0
+}
