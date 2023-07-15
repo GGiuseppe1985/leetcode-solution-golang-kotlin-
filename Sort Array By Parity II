@@ -1,0 +1,15 @@
+func sortArrayByParityII(nums []int) []int {
+    res := make([]int, len(nums))
+    i := 0
+    j := 1
+    for _, n := range nums {
+        if n % 2 == 0{
+            res[i] = n
+            i += 2
+        } else {
+            res[j] = n
+            j += 2
+        }
+    }
+    return res
+}
