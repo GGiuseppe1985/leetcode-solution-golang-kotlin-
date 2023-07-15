@@ -1,0 +1,9 @@
+func smallestRangeI(nums []int, k int) int {
+    sort.Ints(nums)
+    min := nums[0] + k
+    max := nums[len(nums) - 1] - k
+    if min > max{
+        return 0
+    }
+    return max - min
+}
