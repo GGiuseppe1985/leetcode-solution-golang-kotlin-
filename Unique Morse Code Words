@@ -1,0 +1,17 @@
+func uniqueMorseRepresentations(words []string) int {
+    encode := []string{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."}
+    
+    isExist := map[string]bool{}
+    
+    for _, word := range words {
+        encoded := ""
+        
+        for _, c := range word {
+            encoded += encode[c-'a']
+        }
+        
+        isExist[encoded] = true
+    }
+    
+    return len(isExist)
+}
