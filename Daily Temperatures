@@ -1,0 +1,12 @@
+func dailyTemperatures(temperatures []int) []int {
+    result := make([]int, len(temperatures))
+    for i, v := range temperatures{
+        for j := i+ 1; j < len(temperatures); j++{
+            if temperatures[j] > v{
+                result[i] = j -i
+            break
+            }
+        }
+    }
+    return result
+}
