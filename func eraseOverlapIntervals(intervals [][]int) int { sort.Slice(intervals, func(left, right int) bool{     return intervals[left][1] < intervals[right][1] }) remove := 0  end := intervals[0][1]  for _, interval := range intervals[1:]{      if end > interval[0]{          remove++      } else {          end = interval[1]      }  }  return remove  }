@@ -1,0 +1,16 @@
+func eraseOverlapIntervals(intervals [][]int) int {
+sort.Slice(intervals, func(left, right int) bool{
+    return intervals[left][1] < intervals[right][1]
+})
+remove := 0
+ end := intervals[0][1]
+ for _, interval := range intervals[1:]{
+     if end > interval[0]{
+         remove++
+     } else {
+         end = interval[1]
+     }
+ }
+ return remove
+
+}
