@@ -1,0 +1,22 @@
+func countElements(nums []int) int {
+    count := 0
+    
+    min := nums[0]
+    max := nums[0]
+    
+    for _, val := range nums {
+        if val < min {
+            min = val
+        } else if val > max {
+            max = val
+        }
+    }
+    
+    for _, val := range nums {
+        if val > min && val < max {
+            count++
+        }
+    }
+    
+    return count
+}
