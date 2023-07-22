@@ -1,0 +1,17 @@
+func countHillValley(nums []int) int {
+    count, high := 0, nums[0]
+    for i := 1; i < len(nums) - 1; i++{
+        if high < nums[i] && nums[i + 1] < nums[i]{
+            count++
+        }
+        if high > nums[i] && nums[i + 1] > nums[i]{
+            count++
+        }
+        if nums[i] != nums[i + 1]{
+            high = nums[i]
+        }
+    }
+    return count
+
+
+}
