@@ -1,0 +1,31 @@
+func min(a, b int) int{
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func maxRunTime(n int, batteries []int) int64 {
+    sum := 0
+	for _, v := range batteries{
+		sum +=  v
+	}
+	// the time is between 0 and sum/n, to find out the value, we can use binary search
+	left := 0
+	right := sum/n
+	// res := 0
+
+	for left < right{
+		mid := (left + right + 1)/2
+		validBattery := 0
+		for i := 0; i < len(batteries); i++ {
+			validBattery += min(batteries[i], mid)
+		}
+		if validBattery >= mid * n{
+			left = mid 
+		}else{
+			right = mid - 1 
+		}
+	}
+	return int64(left)
+}
