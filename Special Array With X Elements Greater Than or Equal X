@@ -1,0 +1,33 @@
+import "sort"
+
+func isPossible(x int, nums[] int) int {
+    count := 0
+    for _, v := range nums {
+        if v >= x {
+            count++
+        }
+    }
+    return count
+}
+
+func specialArray(nums []int) int {
+    sort.Ints(nums)
+    n := len(nums)
+    
+    l := 0
+    r := n
+    
+    for l <= r {
+        mid := l + (r-l) / 2
+        count := isPossible(mid, nums)
+        if count == mid {
+            return mid
+        } else if count < mid {
+            r = mid - 1
+        } else {
+            l = mid + 1
+        }
+    }
+    
+    return -1
+}
