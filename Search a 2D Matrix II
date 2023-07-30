@@ -1,0 +1,17 @@
+func searchMatrix(matrix [][]int, target int) bool {
+    for _, line := range matrix {
+        left := 0
+        right := len(line) - 1
+        for left <= right {
+            mid := (left  + right )/2
+            if line[mid] == target{
+                return true
+            } else  if line[mid] < target{
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+    }
+    return false
+}
