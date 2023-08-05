@@ -1,17 +1,17 @@
-class Solution {
-    public boolean wordBreak(String s, List<String> wordDict) {
-        boolean [] dp=new boolean[s.length()+1];
-        dp[0]=true;
-        Set<String> set=new HashSet<>(wordDict);
-        for(int i=1;i<=s.length();i++){//n
-            for(int j=0;j<i;j++){//n
-                String suffix=s.substring(j,i);//n
-                if(set.contains(suffix) && dp[j]==true){
-                    dp[i]=true;
-                    break;
-                }
-            }
-        }
-        return dp[s.length()];
-    }
+func wordBreak(s string, wordDict []string) bool {
+	dp := make([]bool, len(s)+1)
+	dp[len(s)] = true
+
+	for i := len(s) - 1; i >= 0; i-- {
+		for _, w := range wordDict {
+			if (i + len(w)) <= len(s) && s[i:i+len(w)] == w {
+				dp[i] = dp[i+len(w)]
+			}
+			if dp[i] {
+				break
+			}
+		}
+	}
+
+	return dp[0]
 }
