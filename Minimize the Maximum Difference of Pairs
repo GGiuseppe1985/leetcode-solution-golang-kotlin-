@@ -1,0 +1,29 @@
+func minimizeMax(nums []int, p int) int {
+    sort.Ints(nums)
+    left := 0
+    right := nums[len(nums) - 1] - nums[0]
+    for left < right {
+        mid := left + (right - left)/2
+        if countValidPairs(nums, mid) >= p {
+            right = mid
+        } else {
+            left = mid + 1
+        }
+
+    }
+    return left
+}
+func countValidPairs(nums []int, maxDifference int) int {
+    idx := 0
+    count := 0
+    
+    for idx < len(nums) - 1 {
+        if nums[idx + 1] - nums[idx] <= maxDifference {
+            count++
+            idx++
+        }
+        idx++
+    }    
+    
+    return count
+}
