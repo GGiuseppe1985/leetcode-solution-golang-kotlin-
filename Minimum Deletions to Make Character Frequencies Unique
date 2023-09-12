@@ -1,0 +1,25 @@
+func minDeletions(s string) int {
+    count := map[string]int{}
+    for _, ch := range s {
+        c := string(ch) 
+        if _, ok := count[c]; ok {
+            count[c] += 1
+        } else {
+            count[c] = 1
+        }
+    }
+    res := 0
+    set := map[int]int{}
+    for _, freq := range count {
+        for freq > 0 {
+            if _, ok := set[freq]; ok {
+                freq -= 1
+                res += 1
+            } else {
+                break
+            }
+        }
+        set[freq] = 0
+    }      
+    return res
+}
