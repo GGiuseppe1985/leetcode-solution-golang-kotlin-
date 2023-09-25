@@ -1,0 +1,15 @@
+func champagneTower(poured int, query_row int, query_glass int) float64 {
+    tower := [101][101]float64{}
+    tower[0][0] = float64(poured)
+    for row:= 0; row <= query_row;row++{
+        for glass := 0; glass <= query_glass;glass++{
+            if tower[row][glass] >= 1{
+                pass := tower[row][glass] - 1
+                tower[row][glass] = 1
+                tower[row+1][glass] +=pass/2
+                tower[row+1][glass+1] += pass/2 
+            }
+        }
+    }
+    return tower[query_row][query_glass]
+}
