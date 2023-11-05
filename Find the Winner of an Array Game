@@ -1,0 +1,14 @@
+func getWinner(arr []int, k int) int {
+    curr, wins := arr[0], 0
+    for _, n := range arr[1:]{
+        if n > curr {
+            curr = n;
+            wins = 0
+        }
+        wins++
+        if wins == k {
+            break
+        }
+    }
+    return curr
+}
