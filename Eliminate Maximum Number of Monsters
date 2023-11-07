@@ -1,0 +1,14 @@
+func eliminateMaximum(dist []int, speed []int) int {
+    n := len(dist)
+    time := make([]int, n)
+    for i := 0; i < n; i++{
+        time[i] = int(math.Ceil(float64(dist[i]) / float64(speed[i])))
+    }
+    sort.Ints(time)
+    for i := 0; i < n; i++{
+        if i >= time[i]{
+            return i
+        }
+    }
+    return n
+}
