@@ -1,0 +1,17 @@
+func isReachableAtTime(sx int, sy int, fx int, fy int, t int) bool {
+	x := abs(sx - fx)
+	y := abs(sy - fy)
+	// if start cell == finish cell, 't' can't be 1
+    if x == 0 && y == 0 {
+        return t != 1 
+    }
+	// since you can take 8 directions, minimum step depends on max(x, y)
+	return t >= x && t >= y
+}
+
+func abs(x int) int {
+	if x >= 0 {
+		return x
+	}
+	return -x
+}
