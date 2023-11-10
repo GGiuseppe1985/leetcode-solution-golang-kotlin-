@@ -1,0 +1,15 @@
+func buildArray(target []int, n int) (ans []string) {
+	j := 1
+
+	for i := 0; i < len(target); i++ {
+		for target[i] > j {
+			ans = append(ans, "Push", "Pop")
+			j++
+		}
+
+		ans = append(ans, "Push")
+		j++
+	}
+
+	return
+}
