@@ -1,0 +1,13 @@
+func findDifferentBinaryString(nums []string) string {
+    hash := make(map[string]bool, len(nums))
+    for _, v := range nums {
+        hash[v] = true
+    }
+    for i := 0; i <= len(nums); i++ {
+        tie :=fmt.Sprintf("%020b", i)[20-len(nums):]
+        if hash[tie] == false {
+            return tie
+        }
+    }
+    return ""
+}
