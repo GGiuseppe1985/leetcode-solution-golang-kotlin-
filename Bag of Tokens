@@ -1,0 +1,25 @@
+func bagOfTokensScore(tokens []int, power int) int {
+    if len(tokens) == 0 {
+        return 0
+    }
+    maxret, ret := 0, 0
+    sort.Ints(tokens)
+    minT, maxT := 0, len(tokens) - 1
+    for minT <= maxT{
+        if power >= tokens[minT] {
+            power -= tokens[minT]
+            minT += 1
+            ret += 1
+            maxret = max(maxret, ret)
+        } else {
+            if ret > 0 {
+                power += tokens[maxT]
+                maxT -= 1
+                ret -= 1
+            } else {
+                break
+            }
+        }
+    }
+    return maxret
+}
