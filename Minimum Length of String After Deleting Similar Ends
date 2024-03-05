@@ -1,0 +1,17 @@
+func minimumLength(s string) int {
+    n := len(s)
+    left := 0
+    right := n-1
+
+    for left < right && s[left] == s[right]{
+        tmp := s[left]
+        for left <= right && s[left] == tmp{
+            left++
+        }
+        for left <= right && s[right] == tmp{
+            right--
+        }
+    }
+    
+    return right-left+1
+}
