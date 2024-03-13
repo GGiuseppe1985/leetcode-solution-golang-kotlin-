@@ -1,0 +1,8 @@
+func pivotInteger(n int) int {
+    x:= math.Sqrt(float64(n * (n +1)/2))
+    if math.Mod(x, 1) != 0{
+        return -1
+    } else {
+        return int(x)
+    }
+}
