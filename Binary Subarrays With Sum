@@ -1,0 +1,12 @@
+func numSubarraysWithSum(nums []int, goal int) int {
+    prefix := map[int]int{}
+    prefix[0] = 1
+    var sum int
+    var ans int
+    for _, v := range nums {
+        sum += v
+        ans += prefix[sum-goal]
+        prefix[sum]++
+    }
+    return ans    
+}
